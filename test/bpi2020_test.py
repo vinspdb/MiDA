@@ -14,11 +14,9 @@ from keras.layers import concatenate, Input, LSTM
 import numpy as np
 from sklearn import preprocessing
 import os
-from keras_layer_normalization import LayerNormalization
 from sklearn.metrics import classification_report, confusion_matrix, precision_recall_fscore_support
 from sklearn.preprocessing import MinMaxScaler, LabelBinarizer, LabelEncoder, OneHotEncoder
 from sklearn.metrics import accuracy_score, roc_auc_score, average_precision_score
-from keras_layer_normalization import LayerNormalization
 os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
 
 benchmark = "bpic2020"
