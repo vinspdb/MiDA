@@ -1,6 +1,6 @@
-#The repository contains code refered to the work:
+**The repository contains code refered to the work:**
 
-###Vincenzo Pasquadibisceglie, Annalisa Appice, Giovanna Castellano, Donato Malerba
+### Vincenzo Pasquadibisceglie, Annalisa Appice, Giovanna Castellano, Donato Malerba
 
 
 [*A multi-view deep learning approach for predictive business process monitoring*](https://ieeexplore.ieee.org/abstract/document/9325056)
