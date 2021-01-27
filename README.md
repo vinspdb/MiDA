@@ -2,10 +2,11 @@
 
 ###Vincenzo Pasquadibisceglie, Annalisa Appice, Giovanna Castellano, Donato Malerba
 
-**A multi-view deep learning approach for predictive business process monitoring**
+
+[*A multi-view deep learning approach for predictive business process monitoring*](https://ieeexplore.ieee.org/abstract/document/9325056)
 
 Please cite our work if you find it useful for your research and work.
-
+'''
 @ARTICLE{9325056,
 
   author={V. {Pasquadibisceglie} and A. {Appice} and G. {Castellano} and D. {Malerba}},
@@ -23,6 +24,6 @@ Please cite our work if you find it useful for your research and work.
   pages={1-1},
 
   doi={10.1109/TSC.2021.3051771}}
-
+'''
 
 Link to datasets: https://drive.google.com/file/d/1KVRHsn8G0LfLaUTmxPy9CpFyM9hf-mzi/view?usp=sharing
