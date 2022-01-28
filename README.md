@@ -20,8 +20,6 @@ Please cite our work if you find it useful for your research and work.
   doi={10.1109/TSC.2021.3051771}}
 ```
 
-Link to datasets: https://drive.google.com/file/d/1KVRHsn8G0LfLaUTmxPy9CpFyM9hf-mzi/view?usp=sharing
-
 #How to use
 Generate prefix for each view:
 ```
