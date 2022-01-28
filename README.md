@@ -20,7 +20,8 @@ Please cite our work if you find it useful for your research and work.
   doi={10.1109/TSC.2021.3051771}}
 ```
 
-#How to use
+# How to use:
+
 Generate prefix for each view:
 ```
 python bpic17o_features.py
