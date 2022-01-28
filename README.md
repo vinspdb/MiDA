@@ -21,3 +21,17 @@ Please cite our work if you find it useful for your research and work.
 ```
 
 Link to datasets: https://drive.google.com/file/d/1KVRHsn8G0LfLaUTmxPy9CpFyM9hf-mzi/view?usp=sharing
+
+#How to use
+Generate prefix for each view:
+```
+python bpi17o_features.py
+```
+Train neural network:
+```
+python smac_receipt.py
+```
+Evaluate the model:
+```
+python receipt_test.py
+```
