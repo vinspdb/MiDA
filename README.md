@@ -27,9 +27,9 @@ python bpi17o_features.py
 ```
 Train neural network:
 ```
-python smac_receipt.py
+python smac_bpic17.py
 ```
 Evaluate the model:
 ```
-python receipt_test.py
+python bpic17_test.py
 ```
