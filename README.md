@@ -23,13 +23,13 @@ Please cite our work if you find it useful for your research and work.
 #How to use
 Generate prefix for each view:
 ```
-python bpi17o_features.py
+python bpic17o_features.py
 ```
 Train neural network:
 ```
-python smac_bpic17.py
+python smac_bpic17o.py
 ```
 Evaluate the model:
 ```
-python bpic17_test.py
+python bpic17o_test.py
 ```
