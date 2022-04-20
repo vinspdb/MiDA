@@ -4,6 +4,7 @@ from sklearn.metrics import classification_report, precision_recall_fscore_suppo
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.metrics import roc_auc_score, average_precision_score
 import pickle
+import sys
 
 acc_list = []
 f1_list = []
@@ -28,7 +29,7 @@ def multiclass_pr_auc_score(y_test, y_pred, average):
     y_pred = lb.transform(y_pred)
     return average_precision_score(y_test, y_pred, average=average)
 
-eventlog = 'receipt'
+eventlog = sys.argv[1]
 
 with open("fold/" + eventlog + "/" + eventlog + '_num_cols.pickle', 'rb') as pickle_file:
     num_view = pickle.load(pickle_file)
