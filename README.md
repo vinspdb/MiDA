@@ -22,15 +22,11 @@ Please cite our work if you find it useful for your research and work.
 
 # How to use:
 
-Generate prefix for each view:
-```
-python bpic17o_features.py
-```
 Train neural network:
 ```
-python smac_bpic17o.py
+python main.py receipt
 ```
 Evaluate the model:
 ```
-python bpic17o_test.py
+python test.py receipt
 ```
