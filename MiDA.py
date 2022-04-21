@@ -129,7 +129,7 @@ class MiDA:
             outfile_temp.write(str(np.inf))
             outfile_temp.close()
 
-            logger = logging.getLogger("bpic2020_fold_" + str(f))
+            logger = logging.getLogger(self._eventlog + "_fold_" + str(f))
             logging.basicConfig(level=logging.INFO)
 
             # Build Configuration Space which defines all parameters and their ranges.
