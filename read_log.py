@@ -101,10 +101,13 @@ class ReadLog:
     def mapping_cat(self, col, df_train, df_test, max_trace, mean_trace, fold):
 
             if col == 'timestamp':
+                scaler = MinMaxScaler()
                 view_train = df_train.groupby('case', sort=False).agg({col: lambda x: list(x)})
                 view_test = df_test.groupby('case', sort=False).agg({col: lambda x: list(x)})
                 view_train = self.get_time(view_train, max_trace, mean_trace)
                 view_test = self.get_time(view_test, max_trace, mean_trace)
+                view_train = scaler.fit_transform(view_train)
+                view_test = scaler.transform(view_test)
                 np.save("fold/"+self._eventlog+"/" + self._eventlog + '_' +  col + '_'+  str(fold) + "_train.npy", view_train)
                 np.save("fold/"+self._eventlog+"/" + self._eventlog + '_' + col + '_'+  str(fold) + "_test.npy", view_test)
                 self._list_num_cols.append(col)
@@ -119,7 +122,7 @@ class ReadLog:
                     view_train = self.get_seq_view(view_train, max_trace, mean_trace)
                     view_test = self.get_seq_view(view_test, max_trace, mean_trace)
                     view_train = scaler.fit_transform(view_train)
-                    view_test = scaler.fit_transform(view_test)
+                    view_test = scaler.transform(view_test)
                     np.save("fold/" + self._eventlog + "/" + self._eventlog + '_' +  col + '_'+  str(fold) + "_train.npy",view_train)
                     np.save("fold/" + self._eventlog + "/" + self._eventlog + '_' +  col + '_'+  str(fold) + "_test.npy", view_test)
                     self._list_num_cols.append(col)
