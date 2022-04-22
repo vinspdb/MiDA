@@ -5,6 +5,7 @@ from sklearn.preprocessing import LabelBinarizer
 from sklearn.metrics import roc_auc_score, average_precision_score
 import pickle
 import sys
+from tensorflow.keras.models import load_model
 
 acc_list = []
 f1_list = []
@@ -29,7 +30,7 @@ def multiclass_pr_auc_score(y_test, y_pred, average):
     y_pred = lb.transform(y_pred)
     return average_precision_score(y_test, y_pred, average=average)
 
-eventlog = sys.argv[1]
+eventlog = 'receipt'#sys.argv[1]
 
 with open("fold/" + eventlog + "/" + eventlog + '_num_cols.pickle', 'rb') as pickle_file:
     num_view = pickle.load(pickle_file)
@@ -42,8 +43,8 @@ for f in range(3):
     # train views
     outfile2 = open(eventlog+".txt", 'a')
 
-    from keras.models import load_model
-    model = load_model("models/receiptmodel_smac_"+str(f)+"_layer.h5")
+
+    model = load_model("models/"+eventlog+"model_smac_"+str(f)+"_layer.h5")
 
     list_cat_view_train = []
     for col in cat_view:
