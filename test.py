@@ -30,7 +30,7 @@ def multiclass_pr_auc_score(y_test, y_pred, average):
     y_pred = lb.transform(y_pred)
     return average_precision_score(y_test, y_pred, average=average)
 
-eventlog = 'receipt'#sys.argv[1]
+eventlog = sys.argv[1]
 
 with open("fold/" + eventlog + "/" + eventlog + '_num_cols.pickle', 'rb') as pickle_file:
     num_view = pickle.load(pickle_file)
