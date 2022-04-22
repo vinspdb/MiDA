@@ -25,6 +25,10 @@ class MiDA:
         self.y_test = []
         self.n_classes = 0
         self.n_fold = 0
+        self.best_score = np.inf
+        self.best_model = None
+        self.best_time = 0
+        self.best_numparameters = 0
 
     @staticmethod
     def Union(lst1, lst2):
@@ -96,21 +100,21 @@ class MiDA:
         scores = [h.history['val_loss'][epoch] for epoch in range(len(h.history['loss']))]
         score = min(scores)
         end_time = perf_counter()
-        global best_score, best_model, best_time, best_numparameters
+        #global best_score, best_model, best_time, best_numparameters
         ff = open("best_temp.txt", "r")
-        best_score = float(ff.read())
-        print("best_score->", best_score)
+        self.best_score = float(ff.read())
+        print("best_score->", self.best_score)
         print("score->", score)
-        if best_score > score:
-            best_score = score
-            best_model = model
+        if self.best_score > score:
+            self.best_score = score
+            self.best_model = model
             outfile_temp = open("best_temp.txt", 'w')
-            outfile_temp.write(str(best_score))
+            outfile_temp.write(str(self.best_score))
             outfile_temp.close()
-            best_numparameters = model.count_params()
-            best_time = end_time - start_time
-            print("BEST SCORE", best_score)
-            best_model.save("models/"+self._eventlog+"model_smac_"+str(self.n_fold)+"_layer.h5")
+            self.best_numparameters = model.count_params()
+            self.best_time = end_time - start_time
+            print("BEST SCORE", self.best_score)
+            self.best_model.save("models/"+self._eventlog+"model_smac_"+str(self.n_fold)+"_layer.h5")
 
         outfile2.write(str(score)+";"+str(len(h.history['loss']))+";"+str(model.count_params())+";"+str(end_time - start_time)+";"+ str(cfg['lstmsize1'])+";"+str(cfg['lstmsize2'])+";"+str(cfg['batch_size'])+";"+str(cfg['learning_rate_init'])+"\n")
         return score
@@ -121,10 +125,10 @@ class MiDA:
             self.n_fold = f
             # model selection
             print('Starting model selection...')
-            best_score = np.inf
-            best_model = None
-            best_time = 0
-            best_numparameters = 0
+            self.best_score = np.inf
+            self.best_model = None
+            self.best_time = 0
+            self.best_numparameters = 0
             outfile_temp = open("best_temp.txt", 'w')
             outfile_temp.write(str(np.inf))
             outfile_temp.close()
