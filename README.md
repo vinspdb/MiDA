@@ -10,13 +10,13 @@ Please cite our work if you find it useful for your research and work.
 
 ```
 @ARTICLE{9325056,
-  author={V. {Pasquadibisceglie} and A. {Appice} and G. {Castellano} and D. {Malerba}},
+  author={Pasquadibisceglie, Vincenzo and Appice, Annalisa and Castellano, Giovanna and Malerba, Donato},
   journal={IEEE Transactions on Services Computing}, 
-  title={A multi-view deep learning approach for predictive business process monitoring}, 
-  year={2021},
-  volume={},
-  number={},
-  pages={1-1},
+  title={A Multi-View Deep Learning Approach for Predictive Business Process Monitoring}, 
+  year={2022},
+  volume={15},
+  number={4},
+  pages={2382-2395},
   doi={10.1109/TSC.2021.3051771}}
 ```
 
